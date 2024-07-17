@@ -11,4 +11,11 @@ node {
         mvnPath = "${mvnHome}/bin/mvn";
         sh "${mvnPath} clean package"
     }
+stage('deploying'){
+sshagent(['tomcat-server-credentials']) {
+   
+sh 'scp -o StrictHostKeyChecking=no target/01-maven-web-app.war ec2-user@13.126.148.195:/home/ec2-user/apache-tomcat-9.0.91/webapps'
+
+}
+}
 }
