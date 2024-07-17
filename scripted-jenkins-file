@@ -3,7 +3,7 @@ node {
     def mvnPath
     
     stage('git clone') {
-       https://github.com/rajkumar325/maven-web-app.git
+        git 'https://github.com/ashokitschool/maven-web-app.git'
     }
     
     stage('Maven build'){
